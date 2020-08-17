@@ -5,12 +5,16 @@
 }
 
 body {
-    /*background-image: url("../assets/background_image.JPG");*/
     background-color: white;
 }
 
 .center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    min-height: 90vh;
 }
 
 .title {
@@ -38,26 +42,12 @@ body {
 
 }
 
-.header {
-    margin-top: 10%;
-}
+
 
 .divider {
     width: 75%;
 }
 
-
-@keyframes cardEntrance {
-    from {
-        opacity: 0;
-        transform: scale(0.3);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
 
 .card {
     position: fixed;
@@ -65,13 +55,17 @@ body {
     letter-spacing: .17em;
     text-transform: uppercase;
     z-index: 100;
+    border-radius: 5px;
     transition: all .8s cubic-bezier(.19, 1, .22, 1);
+    animation: cardEntrance 700ms
 }
 
 .card:hover {
     box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
     transform: translateY(-3px) scale(1.1);
     cursor: pointer;
+    background-color: var(--primary-color);
+    color: aliceblue;
 }
 
 .tl {
@@ -94,8 +88,6 @@ body {
     right: 0;
 }
 
-@media screen and (max-width: 435px) {
-    .header {
-        margin-top: 70%;
-    }
-}
+@media screen and (max-width: 435px) {}
+
+@media (min-width: 436px)and (max-width: 767px) {}
