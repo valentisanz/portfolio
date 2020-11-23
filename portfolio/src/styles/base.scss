@@ -1,16 +1,6 @@
-@import "~bulma/css/bulma.css";
+@import "~bulma/bulma";
+$footer-padding: 1.5rem 0.75rem 3rem;
+$footer-color: false;
 body {
-  margin: 0;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-  border-radius: 5px;
-  margin-right: auto;
-  padding: 0 10px;
-  :hover {
-    transition: 0.5s;
-    font-style: italic;
-  }
+  padding: 16px;
 }
