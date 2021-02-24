@@ -5,4 +5,10 @@ $primary-color:#002BD8;
 $secondary-color:#aca5a5;
 
 //FONTS
-$primary-font: 'Roboto',sans-serif
+$primary-font: 'Roboto',
+sans-serif;
+
+//BREAKPOINTS
+$mobile-size:667px;
+$tablet-size: 1023px;
+$desktop-size:$tablet-size+1;

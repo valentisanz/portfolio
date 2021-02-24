@@ -2,5 +2,21 @@
 
 .home-page {
     padding-left: 300px;
+    padding-right: 300px;
     font-family: $primary-font;
+    display: flex;
+    justify-content: center;
+
+
+    div {
+        text-align: center;
+
+        img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+
+        }
+    }
 }

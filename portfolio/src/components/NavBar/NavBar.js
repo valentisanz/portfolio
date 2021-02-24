@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { BiAlignLeft } from 'react-icons/bi'
 import { CgClose } from 'react-icons/cg'
+import { SiBitcoin } from 'react-icons/si'
 import SideButton from '../ButtonMac/SideButton'
 import './NavBar.scss'
 
@@ -12,8 +13,15 @@ export default function NavBar(props) {
     const showSidebar = () => setSidebar(!sidebar);
     return (
         <>
+            <div className='navbar-menu'>
+                <div>
+                    <Link to='/'>Home</Link>
+                    <Link to='/about'>About</Link>
+                    <Link to='/contact'>Contact</Link>
+                </div>
+            </div>
             <div className='navbar'>
-                <Link to='#' className='menu-bars' onClick={showSidebar}>
+                <Link to='#' className='toggle-button' onClick={showSidebar}>
                     <BiAlignLeft />
                 </Link>
             </div>
