@@ -1,5 +1,5 @@
 import React from 'react'
-import './Home.css'
+import './About.scss'
 
 export default function About() {
     return (

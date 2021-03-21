@@ -1,47 +1,19 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { BiAlignLeft } from 'react-icons/bi'
-import { CgClose } from 'react-icons/cg'
-import { SiBitcoin } from 'react-icons/si'
-import SideButton from '../ButtonMac/SideButton'
+import NavButton from '../NavButton/NavButton'
 import './NavBar.scss'
 
 export default function NavBar(props) {
-
+    const [activeButton, setActiveButton] = useState({ 'home': false, 'about': false, 'contact': false })
     const [sidebar, setSidebar] = useState(false);
 
     const showSidebar = () => setSidebar(!sidebar);
     return (
-        <>
-            <div className='navbar-menu'>
-                <div>
-                    <Link to='/'>Home</Link>
-                    <Link to='/about'>About</Link>
-                    <Link to='/contact'>Contact</Link>
-                </div>
+        <nav>
+            <div className='menu-bar'>
+                <NavButton link='home' activeButton />
+                <NavButton link='about' activeButton />
+                <NavButton link='contact' activeButton />
             </div>
-            <div className='navbar'>
-                <Link to='#' className='toggle-button' onClick={showSidebar}>
-                    <BiAlignLeft />
-                </Link>
-            </div>
-            <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-                <ul className='nav-menu-items' onClick={showSidebar}>
-                    <li className='navbar-toggle'>
-                        <Link to='#' className='nav-link'>
-                            <CgClose />
-                        </Link>
-                    </li>
-
-                    <li className='nav-link'>
-                        <SideButton link='Home' />
-                    </li>
-                    <li className='nav-link'>
-                        <SideButton link='About' />
-
-                    </li>
-                </ul>
-            </nav>
-        </>
+        </nav>
     )
 }
