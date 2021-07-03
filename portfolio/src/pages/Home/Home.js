@@ -1,20 +1,38 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './Home.scss'
 import Image from '../../assets/photo.png'
-import { Fade, Flip } from "react-awesome-reveal";
 
 function Home() {
+    const [actualPage, setActualPage]=useState('home')
+
+    function goTo(page){
+        setActualPage(page)
+    }
+    
     return (
         <div className='home-page'>
-            <div className='info-container'>
-                <Flip triggerOnce>
-                    <img src={Image} />
-                </Flip>
-                <Fade triggerOnce delay={1000} >
-                    <h3>Welcome! My name is</h3>
-                    <h1>Valenti Sanz</h1>
-                    <h3>I'm a Full Stack Developer</h3>
-                </Fade>
+            <div className='container'>
+                <div className='sidebar'>
+                    <img className="photo" src={Image} />
+                    <h2 className='name'>Valenti Sanz</h2>
+                    <p className='age'>21 years old</p>
+                    <div className='pages'>
+                        <button onClick={() => goTo('home')}>Home</button>
+                        <button onClick={() => goTo('about')}>About</button>
+                    </div>
+                </div>
+                <div className='content'>
+                    {actualPage === 'home' &&
+                        <div className='home'>
+                            <h1>Home</h1>
+                        </div>
+                    }
+                    {actualPage === 'about' &&
+                        <div className='about'>
+                            <h1>About</h1>
+                        </div>
+                    }
+                </div>
 
             </div>
         </div>
