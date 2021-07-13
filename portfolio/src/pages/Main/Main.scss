@@ -1,0 +1,151 @@
+@import '../../styles/_variables.scss';
+
+.main-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $primary-color;
+    font-size: 32px;
+    font-family: $primary-font;
+    background-color: #f1a45b;
+    height: 100vh;
+    padding: 56px 0;
+
+    .container {
+        display: flex;
+        background-color: #ffffff;
+        border-radius: 8px;
+        max-width: 1180px;
+        width: 100%;
+        height: 100%;
+        padding: 16px;
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 30%;
+            border-right: 1px solid #d8d8d8;
+
+            img {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+            }
+
+            .name {
+                font-size: 32px;
+            }
+
+            .age {
+                font-size: 20px;
+            }
+
+            .name,
+            .age {
+                margin-top: 8px;
+            }
+
+            .pages {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                padding: 24px 0;
+
+                .nav-link {
+                    border: 2px solid;
+                }
+
+                .noselect {
+                    margin: 8px 0;
+                    -webkit-touch-callout: none;
+                    -webkit-user-select: none;
+                    -khtml-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                    -webkit-tap-highlight-color: transparent;
+                }
+
+                button {
+                    width: 150px;
+                    height: 50px;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    border: none;
+                    border-radius: 50px;
+                    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
+                    background: #ffffff;
+                }
+
+                button,
+                button span {
+                    transition: 200ms;
+                }
+
+                button .text {
+                    transform: translateX(35px);
+                    color: #000;
+                    font-weight: bold;
+                }
+
+                button .icon {
+                    position: absolute;
+                    border-left: 1px solid #333;
+                    transform: translateX(110px);
+                    height: 40px;
+                    width: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                button svg {
+                    width: 15px;
+                    fill: #333;
+                }
+
+                button:hover {
+                    background: #ffffff;
+                }
+
+                button:hover .text {
+                    color: transparent;
+                }
+
+                button:hover .icon {
+                    width: 150px;
+                    border-left: none;
+                    transform: translateX(0);
+                }
+
+                button:focus {
+                    outline: none;
+                }
+            }
+
+            .made-with {
+                display: flex;
+                align-items: center;
+                color: #9b9b9b;
+                opacity: 0.8;
+                font-weight: lighter;
+
+                span {
+                    font-size: 12px;
+                }
+
+                svg {
+                    width: 16px !important;
+                    margin: 0 8px;
+                }
+            }
+
+        }
+
+        .content {
+            width: 70%;
+        }
+    }
+}
